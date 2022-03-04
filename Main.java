@@ -1,12 +1,7 @@
-import java.util.Scanner;
-class Main {
-  public static void main(String[] args) {
-    boolean game_over = false;
-    Scanner sc = new Scanner(System.in); 
+public class Main {
+    public static void main (String [] args) {
+        Room sus = new Room();
 
-      while (game_over != true) {
-        
+        sus.Main_room();
     }
-    
-  }
 }

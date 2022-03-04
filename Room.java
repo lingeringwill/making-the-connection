@@ -5,6 +5,7 @@ class Room {
   private String player_name;
   private int score;
 
+  Boss run = new Boss();
   public Room() {
     this.room_num = 0;
     this.player_name = "";
@@ -16,7 +17,7 @@ class Room {
     System.out.println(x);
   }
 
-  public void Main_room(boolean gameOver) {//main loop where everything will run.
+  public void Main_room() {//main loop where everything will run.
       TextHelper("Hello, you'll travel between 3 rooms and beat their challenges. Good luck");
       TextHelper("what is your name young one");
 
@@ -31,14 +32,15 @@ class Room {
       Room_select();
       while (score < 3) {//while 
             if (room_num == 1) {
-              
+              run.b1();
             }
         }
 
 
   }
 
-  public void Room_select() {
+  public void Room_select() // changes the room number which will allow another function to run the room functions
+  {
     Scanner input = new Scanner(System.in); // This will chnage the room number by taking in the users input
 
     TextHelper("please enter in the room you'd like to enter");
@@ -57,5 +59,7 @@ class Room {
   public int GetScore() {
     return score;
   }
-  public void SetScore(int)
+  public void SetScore(int x)  {
+      score = score + x;
+  }
 }
